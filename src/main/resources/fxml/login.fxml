@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="378.0"
+	prefWidth="629.0" style="-fx-background-color: black;"
+	styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.101"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="com.scoolfx.desktop.controller.LoginController">
+	<stylesheets>
+		<URL value="@login.css" />
+	</stylesheets>
+	<children>
+		<BorderPane fx:id="PANE" layoutX="149.0" layoutY="90.0"
+			prefHeight="378.0" prefWidth="687.0" AnchorPane.bottomAnchor="0.0"
+			AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+			AnchorPane.topAnchor="0.0">
+			<padding>
+				<Insets bottom="70.0" top="150.0" />
+			</padding>
+			<center>
+				<GridPane BorderPane.alignment="CENTER">
+					<columnConstraints>
+						<ColumnConstraints hgrow="SOMETIMES"
+							maxWidth="173.0" minWidth="10.0" prefWidth="118.0" />
+						<ColumnConstraints hgrow="SOMETIMES"
+							maxWidth="253.0" minWidth="10.0" prefWidth="197.0" />
+					</columnConstraints>
+					<rowConstraints>
+						<RowConstraints minHeight="10.0" prefHeight="30.0"
+							vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0"
+							vgrow="SOMETIMES" />
+					</rowConstraints>
+					<children>
+						<Label fx:id="U_LABEL" alignment="CENTER" text="User Name"
+							textFill="WHITE">
+							<font>
+								<Font name="Monotype Corsiva" size="22.0" />
+							</font>
+							<effect>
+								<DropShadow color="#fffefe" />
+							</effect>
+						</Label>
+						<Label fx:id="P_LABEL" text="Password" textFill="#f8f7f7"
+							GridPane.rowIndex="1">
+							<font>
+								<Font name="Monotype Corsiva" size="22.0" />
+							</font>
+							<effect>
+								<DropShadow color="#fffefe" />
+							</effect>
+						</Label>
+						<PasswordField fx:id="P_FIELD" disable="true"
+							onKeyReleased="#passwordFieldHandler" prefHeight="41.0"
+							prefWidth="197.0" promptText="Password" GridPane.columnIndex="1"
+							GridPane.rowIndex="1">
+							<font>
+								<Font name="Monotype Corsiva" size="18.0" />
+							</font>
+						</PasswordField>
+						<TextField fx:id="U_FIELD" onAction="#enterNext"
+							onKeyReleased="#userFieldHandler" prefHeight="41.0"
+							prefWidth="197.0" promptText="User Name" GridPane.columnIndex="1">
+							<font>
+								<Font name="Monotype Corsiva" size="20.0" />
+							</font>
+						</TextField>
+					</children>
+					<padding>
+						<Insets left="40.0" right="40.0" />
+					</padding>
+				</GridPane>
+			</center>
+			<left>
+				<VBox prefHeight="145.0" prefWidth="234.0"
+					BorderPane.alignment="CENTER">
+					<children>
+						<ProgressIndicator prefHeight="165.0"
+							prefWidth="234.0" />
+					</children>
+				</VBox>
+			</left>
+		</BorderPane>
+	</children>
+</AnchorPane>

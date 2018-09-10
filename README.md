@@ -1,2 +1,7 @@
-# scoolfx
-A desktop based School management system with Rich UI Interface.
+# SCoolFX
+![][SCoolFX]
+
+```This application is in progress ......```
+
+
+[SCoolFX]: https://pbs.twimg.com/media/C5RCvxZWIAASRaK.jpg

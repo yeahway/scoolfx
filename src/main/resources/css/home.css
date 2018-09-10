@@ -1,0 +1,63 @@
+/*
+ * Empty Stylesheet file.
+ */
+#BOTTOM_LEFTT {
+    -fx-background-color: linear-gradient(black, black, transparent);
+}
+#BOTTOM_CENTERR {
+    -fx-background-color: linear-gradient(transparent, white, white);
+}
+#BOTTOM_RIGHTT {
+    -fx-background-color: linear-gradient(transparent,darkslategrey,black);
+}
+#SEARCH {
+    -fx-border-radius: 0 12 12 0;
+    -fx-background-radius: 0 12 12 0;
+}
+#HEADER {
+    -fx-background-color: linear-gradient(darkslategray, black);
+}
+
+#TITLE_BAR {
+    -fx-background-color: linear-gradient(black, darkslategray);
+}
+#TITLE {
+    -fx-font-size: 18px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#MINIMISE{
+    -fx-background-color: #66ff6620;    
+} 
+#EXIT {
+    -fx-background-color: #ff333320;
+}
+#MENU_BAR {
+    -fx-background-color:transparent;
+    -fx-base: black;
+}
+
+#PREVIOUS, #NEXT, #HOME, #REFRESH {
+    -fx-base: black;
+}
+
+#STUDENT_B, #STAFF_B, #FINANCE_B, #EXTRA_B, #SETTING_B, #SECURITY_B, #LOG_B {
+    -fx-background-color:transparent;
+}
+
+#DURATION{
+    -fx-fill: red;
+    -fx-font-size: 60px;
+    -fx-font-weight: bold;
+}
+#TIME {
+    -fx-fill: white;
+    -fx-font-size: 75px;
+    -fx-font-weight: bold;
+}
+#SEARCH_HELPER {
+    -fx-base:#ffffee;
+    -fx-background-radius: 14 0 0 14;
+    -fx-border-radius: 14 0 0 14;
+}

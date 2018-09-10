@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane id="BorderPane" fx:id="HOME_PANE" onKeyPressed="#KeyPressed" onKeyReleased="#showSearchContent" prefHeight="710.0" prefWidth="1215.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shekkar.scoolfx.main.home.HomeController">
+    <stylesheets>
+        <URL value="@home.css" />
+    </stylesheets>
+   <top>
+      <ToolBar fx:id="TITLE_BAR" maxHeight="54.0" minHeight="54.0" prefHeight="54.0" prefWidth="1215.0" BorderPane.alignment="CENTER">
+         <items>
+            <HBox fx:id="LEFT" alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="494.0">
+               <children>
+                  <MenuBar fx:id="MENU_BAR">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                              <MenuItem fx:id="SCREEN_SHOT" mnemonicParsing="false" onAction="#takeScreenShot" text="Screenshot" />
+                              <MenuItem fx:id="CLOSE" mnemonicParsing="false" onAction="#close" text="Exit" />
+                        </items>
+                      </Menu>
+                      <Menu fx:id="OPTIONS" mnemonicParsing="false" text="Options">
+                           <items>
+                              <Menu mnemonicParsing="false" text="Background Image">
+                                 <items>
+                                    <RadioMenuItem fx:id="BUBBLE" mnemonicParsing="false" text="Bubble" />
+                                    <RadioMenuItem fx:id="BUTTER" mnemonicParsing="false" text="Butterfly" />
+                                    <RadioMenuItem fx:id="FLOWER" mnemonicParsing="false" text="Flower" />
+                                    <RadioMenuItem fx:id="REFLECT" mnemonicParsing="false" text="Reflection" />
+                                    <RadioMenuItem fx:id="LITTLE_W" mnemonicParsing="false" text="Little World" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Background Color">
+                                <items>
+                                  <MenuItem fx:id="white" mnemonicParsing="false" text="white" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Theme">
+                                <items>
+                                  <MenuItem fx:id="White" mnemonicParsing="false" text="White" />
+                                    <MenuItem fx:id="Black" mnemonicParsing="false" text="Black" />
+                                    <MenuItem fx:id="Red" mnemonicParsing="false" text="Red" />
+                                    <MenuItem fx:id="Pink" mnemonicParsing="false" text="Pink" />
+                                    <MenuItem fx:id="GreenY" mnemonicParsing="false" text="Green Yellow" />
+                                    <MenuItem fx:id="Green" mnemonicParsing="false" text="Green" />
+                                    <MenuItem fx:id="Orange" mnemonicParsing="false" text="Orange" />
+                                    <MenuItem fx:id="Yellow" mnemonicParsing="false" text="Yellow" />
+                                    <MenuItem fx:id="Blue" mnemonicParsing="false" text="Blue" />
+                                    <MenuItem fx:id="DarkGrey" mnemonicParsing="false" text="Dark Grey" />
+                                </items>
+                              </Menu>
+                           </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem fx:id="ABOUT" mnemonicParsing="false" text="About" />
+                              <MenuItem fx:id="HELP_C" mnemonicParsing="false" text="Help content" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+                  <Button fx:id="PREVIOUS" mnemonicParsing="false" onAction="#previousButtonClicked" prefHeight="42.0" prefWidth="42.0" />
+                  <Button fx:id="NEXT" mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="42.0" prefWidth="42.0" />
+                  <Button fx:id="HOME" mnemonicParsing="false" onAction="#homeButtonClicked" prefHeight="42.0" prefWidth="42.0" />
+                  <Button fx:id="REFRESH" mnemonicParsing="false" onAction="#refresh" prefHeight="42.0" prefWidth="42.0" />
+                  <Button fx:id="ZOOM_O" mnemonicParsing="false" onAction="#zoomOutAction" onMouseEntered="#zoomOutHovered" onMouseExited="#zoomOutHoveredOff" prefHeight="27.0" prefWidth="29.0" style="-fx-background-color: transparent;">
+                     <HBox.margin>
+                        <Insets left="8.0" right="2.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Slider fx:id="ZOOMER" blockIncrement="5.0" prefHeight="38.0" prefWidth="92.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-base: darkslategrey;" value="100.0">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></Slider>
+                  <Button fx:id="ZOOM_I" mnemonicParsing="false" onAction="#zoomInAction" onMouseEntered="#zoomInHovered" onMouseExited="#zoomInHoveredOff" prefHeight="25.0" prefWidth="26.0" style="-fx-background-color: transparent;" />
+               </children>
+            </HBox>
+            <HBox fx:id="CENTER" alignment="CENTER" prefHeight="43.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="TITLE" text="Home" textFill="#fcfcfc">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox fx:id="RIGHT" alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="341.0">
+               <children>
+                  <Button fx:id="SEARCH_HELPER" maxHeight="25.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" />
+                  <TextField fx:id="SEARCH" prefHeight="31.0" prefWidth="157.0" promptText=" Search (Insert)">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="3.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="MINIMISE" mnemonicParsing="false" onAction="#minimize" onMouseEntered="#miniHovered" onMouseExited="#miniHoveredOff" prefHeight="42.0" prefWidth="42.0" />
+                  <Button fx:id="EXIT" mnemonicParsing="false" onMouseClicked="#exit" onMouseEntered="#exitHovered" onMouseExited="#exitHoveredOff" prefHeight="42.0" prefWidth="42.0" />
+               </children>
+            </HBox>
+         </items>
+      </ToolBar>
+   </top>
+   <center>
+      <BorderPane id="home" fx:id="HOME_BODY" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <bottom>
+            <HBox fx:id="BODY_BOTTOM" alignment="CENTER" maxHeight="178.0" minHeight="178.0" prefHeight="178.0" prefWidth="1215.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox fx:id="BOTTOM_LEFT" alignment="BOTTOM_LEFT" prefHeight="223.0" prefWidth="452.0" spacing="5.0">
+                     <children>
+                        <Label fx:id="TIME" textFill="#f5f2f2">
+                           <font>
+                              <Font size="48.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="NAME" fill="#f8f8f7" strokeType="OUTSIDE" strokeWidth="0.0">
+                           <font>
+                              <Font name="System Bold" size="40.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="5.0" />
+                     </padding>
+                  </VBox>
+                  <VBox fx:id="BOTTOM_CENTER" alignment="BOTTOM_RIGHT" prefHeight="223.0" prefWidth="386.0" />
+                  <VBox fx:id="BOTTOM_RIGHT" alignment="BOTTOM_RIGHT" prefHeight="223.0" prefWidth="426.0" spacing="3.0">
+                     <children>
+                        <Button fx:id="LOG_B" mnemonicParsing="false" onAction="#logOutButtonAction" onMouseEntered="#logOutButtonHovered" onMouseExited="#logOutButtonHoveredOff" prefHeight="65.0" prefWidth="93.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Text fx:id="DURATION" strokeType="OUTSIDE" strokeWidth="0.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" right="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+         </bottom>
+         <top>
+            <HBox fx:id="BODY_TOP" alignment="TOP_CENTER" maxHeight="189.0" prefHeight="189.0" prefWidth="1215.0" spacing="50.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="STUDENT_B" mnemonicParsing="false" onAction="#studentButtonAction" onMouseEntered="#studentButtonHovered" onMouseExited="#studentButtonHoveredOff" prefHeight="60.0" prefWidth="60.0">
+                     <effect>
+                        <Reflection fraction="1.0" topOpacity="0.91" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="STAFF_B" mnemonicParsing="false" onAction="#staffButtonAction" onMouseEntered="#staffButtonHovered" onMouseExited="#staffButtonHoveredOff" prefHeight="60.0" prefWidth="60.0">
+                     <effect>
+                        <Reflection fraction="1.0" topOpacity="0.91" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="FINANCE_B" mnemonicParsing="false" onAction="#financeButtonAction" onMouseEntered="#financeButtonHovered" onMouseExited="#financeButtonHoveredOff" prefHeight="60.0" prefWidth="60.0">
+                     <effect>
+                        <Reflection fraction="1.0" topOpacity="0.94" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="EXTRA_B" mnemonicParsing="false" onAction="#extraButtonAction" onMouseEntered="#extraButtonHovered" onMouseExited="#extraButtonHoveredOff" prefHeight="59.0" prefWidth="60.0">
+                     <effect>
+                        <Reflection fraction="1.0" topOpacity="0.9" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="SECURITY_B" mnemonicParsing="false" onAction="#securityButtonAction" onMouseEntered="#securityButtonHovered" onMouseExited="#securityButtonHoveredOff" prefHeight="60.0" prefWidth="60.0">
+                     <effect>
+                        <Reflection fraction="1.0" topOpacity="0.9" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="SETTING_B" mnemonicParsing="false" onAction="#settingButtonAction" onMouseEntered="#settingButtonHovered" onMouseExited="#settingButtonHoveredOff" prefHeight="60.0" prefWidth="60.0">
+                     <effect>
+                        <Reflection fraction="1.0" topOpacity="0.9" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets top="28.0" />
+               </padding>
+            </HBox>
+         </top>
+         <center>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="289.0" prefWidth="1000.0" style="-fx-background-color: linear-gradient( #000000bb, #ffffff10, #000000bb); -fx-border-radius: 30; -fx-background-radius: 30; -fx-border-color: white; -fx-border-width: 2px; -fx-border-style: solid;">
+                     <children>
+                        <Label text="HIGHLIGHTS" textFill="#b3ff08">
+                           <font>
+                              <Font name="Monotype Corsiva" size="40.0" />                              
+                           </font>
+                           <effect>
+                              <DropShadow color="#fffefe" height="44.72" offsetY="2.0" radius="10.68" spread="0.01" width="0.0" />
+                           </effect>
+                        </Label>
+                        <Pagination fx:id="PAGI" maxPageIndicatorCount="4" pageCount="4" prefHeight="345.0" prefWidth="140.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>

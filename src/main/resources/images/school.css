@@ -1,0 +1,8 @@
+primaryStage{
+    -fx-background-image:url("whole.png");
+    -fx-font-size:20pt;
+}
+.button{
+    -fx-font-style: bold;
+    -fx-background-color: linear-gradient(#000111,#000111);
+}
